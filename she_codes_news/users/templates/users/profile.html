@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div id="user-profile">
+    <h2>{{ user.get_full_name }}</h2>
+    <h3>&lt;{{ user.email }}&gt;</h3>
+    {% if user.image %}
+
+    {% else %}
+        <img scr="{% static 'users/default.jpg' %}">
+    {% endif %}
+</div>
+
+{% endblock %}
