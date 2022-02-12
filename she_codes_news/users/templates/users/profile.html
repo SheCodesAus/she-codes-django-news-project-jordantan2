@@ -12,5 +12,9 @@
         <img scr="{% static 'users/default.jpg' %}">
     {% endif %}
 </div>
-
+<h4>Strories written by you:</h4>
+{% for story in user.newsstory_set.all %}
+    <p> </p>
+    {{ story.title }}
+{% endfor %}
 {% endblock %}

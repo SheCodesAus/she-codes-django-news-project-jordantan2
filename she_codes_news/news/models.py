@@ -1,3 +1,4 @@
+from email.mime import image
 from django.db import models
 from django.contrib.auth import get_user_model
 
@@ -11,3 +12,4 @@ class NewsStory(models.Model):
     )
     pub_date = models.DateTimeField()
     content = models.TextField()
+    # image = models.ImageField()

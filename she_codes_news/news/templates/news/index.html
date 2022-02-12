@@ -1,4 +1,5 @@
-{% extends "base.html" %} {% load static %} 
+{% extends "base.html" %} 
+{% load static %} 
 {% block stylesheets %}
 <link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}" />
 {% endblock %} 
@@ -6,9 +7,14 @@
 
 {% block content %}
 
-{% if request.user.is_authenticated %}
-    <a href="{% url 'news:newStory' %}">Write New Story</a>
-{% endif %}
+<!-- {% if request.user.is_authenticated %}
+    <a style="background-color: lightskyblue;" href="{% url 'news:newStory' %}">Write New Story</a>
+    <h4>Strories written by you:</h4>
+  {% for story in user.newsstory_set.all %}
+    <p> </p>
+    {{ story.title }}
+  {% endfor %}
+{% endif %} -->
 
 <h2>Latest News</h2>
 
