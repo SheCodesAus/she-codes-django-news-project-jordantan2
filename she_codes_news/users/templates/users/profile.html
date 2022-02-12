@@ -5,16 +5,15 @@
 
 <div id="user-profile">
     <h2>{{ user.get_full_name }}</h2>
-    <h3>&lt;{{ user.email }}&gt;</h3>
+    <div style="background-color:lightgrey; width: 50%;">
+    <h1 style="color: black; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">{{ user.username }}</user></h1>
+    <h3>&lt;{{ user.email }}&gt;</h3>    
+    </div>
+    
     {% if user.image %}
-
     {% else %}
         <img scr="{% static 'users/default.jpg' %}">
     {% endif %}
 </div>
-<h4>Strories written by you:</h4>
-{% for story in user.newsstory_set.all %}
-    <p> </p>
-    {{ story.title }}
-{% endfor %}
+
 {% endblock %}
