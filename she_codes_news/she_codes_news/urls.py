@@ -18,10 +18,9 @@ from django.urls import path, include
 from users.views import ProfileView
 
 urlpatterns = [
-    path('', include('news.urls')),
-    path('news/', include('news.urls')),
-    path('users/', include('users.urls')),
-    path('admin/', admin.site.urls),
-    path('users/', include('django.contrib.auth.urls')),
-    
+    path("", include("news.urls")),
+    # path('news/', include('news.urls')),
+    path("users/", include("users.urls")),
+    path("admin/", admin.site.urls),
+    path("users/", include("django.contrib.auth.urls")),
 ]
