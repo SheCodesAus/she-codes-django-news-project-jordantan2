@@ -8,11 +8,13 @@
 {% block content %}
 <div>
 <a id="newstory" href="{% url 'news:newStory' %}">Write New Story</a>
+
 <div>
 <h4>Strories written by you:</h4>
 {% for story in user.newsstory_set.all %}
     <p> </p>
     {{ story.title }}
+    <a id="deletestory" href="{% url 'news:deleteStory' story.id %}">Delete Story</a>
 {% endfor %}  
 </div>
   

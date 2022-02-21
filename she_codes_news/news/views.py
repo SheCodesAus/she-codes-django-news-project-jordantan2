@@ -38,6 +38,7 @@ class AddStoryView(generic.CreateView):
 
 class DeleteStoryView(generic.DeleteView):
     model = NewsStory
+    template_name = "news/deleteStory.html"
     success_url = reverse_lazy("news:index")
 
     def get_object(self, queryset=None):

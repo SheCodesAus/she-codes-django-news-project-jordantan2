@@ -15,16 +15,16 @@
     {{ story.title }}
   {% endfor %}
 {% endif %} -->
-
+<div id="body">
 <h2>Latest News</h2>
 
-<div id="latest-stories">
+<!-- <div id="latest-stories">
   {% if latest_stories %} {% for story in latest_stories %}
   {% include "./storyCard.html" with story=story position=forloop.counter %}
   {% endfor %} {% else %}
   <p>No stories are available.</p>
   {% endif %}
-</div>
+</div> -->
 
 <div id="all-stories">
   {% if all_stories %} {% for story in all_stories %}
@@ -33,6 +33,6 @@
   <p>No stories are available.</p>
   {% endif %}
 </div>
-
+</div>
 
 {% endblock %}
