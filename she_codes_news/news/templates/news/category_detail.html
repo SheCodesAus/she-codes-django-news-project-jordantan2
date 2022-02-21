@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% load static %} {% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}" />
+{% endblock %} {% block content %} {{ category.slug }} {% comment %} {% for
+story in category.stories.all %} {% endcomment %}
+
+<div>
+  <h4>Strories written by {{ customuser.username }}:</h4>
+  {% for story in category.stories.all %}
+  <p></p>
+  {{ story.title }}
+  <a
+    style="color: red"
+    id="deletestory"
+    href="{% url 'news:deleteStory' story.id %}"
+    >Delete Story</a
+  >
+  {% endfor %}
+</div>
+
+{% comment %} {% endfor %} {% endcomment %} {% endblock %}

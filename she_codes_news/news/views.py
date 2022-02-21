@@ -1,5 +1,6 @@
+from unicodedata import category
 from django.views import generic
-from .models import NewsStory
+from .models import NewsStory, Category
 from django.urls import reverse_lazy
 from .forms import StoryForm
 from django.core.exceptions import PermissionDenied
@@ -46,3 +47,7 @@ class DeleteStoryView(generic.DeleteView):
         if story.author != self.request.user:
             raise PermissionDenied()
         return story
+
+
+class CategoryView(generic.DetailView):
+    model = Category

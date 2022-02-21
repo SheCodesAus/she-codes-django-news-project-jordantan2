@@ -4,16 +4,24 @@
 {% block content %}
 
 <div id="user-profile">
-    <h2>{{ user.get_full_name }}</h2>
+    <h2>{{ customuser.get_full_name }}</h2>
     <div style="background-color:lightgrey; width: 50%;">
-    <h1 style="color: black; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">{{ user.username }}</user></h1>
-    <h3>&lt;{{ user.email }}&gt;</h3>    
+    <h1 style="color: black; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">{{ customuser.username }}</user></h1>
+    <h3>&lt;{{ customuser.email }}&gt;</h3>    
     </div>
     
-    {% if user.image %}
+    {% if customuser.image %}
     {% else %}
         <img scr="{% static 'users/default.jpg' %}">
     {% endif %}
 </div>
+{% comment %} <div>
+    <h4>Strories written by {{ customuser.username }}:</h4>
+    {% for story in customuser.newsstory_set.all %}
+        <p> </p>
+        {{ story.title }}
+        <a style="color: red;"id="deletestory" href="{% url 'news:deleteStory' story.id %}">Delete Story</a>
+    {% endfor %}  
+</div> {% endcomment %}
 
 {% endblock %}

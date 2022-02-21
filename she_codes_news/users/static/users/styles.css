@@ -3,4 +3,6 @@
   font-weight: bold;
   border: solid;
   padding: 12px;
+  display: flex;
+  width: 125px;
 }

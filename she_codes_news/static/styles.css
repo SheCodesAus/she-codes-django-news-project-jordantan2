@@ -20,6 +20,7 @@ h1 {
   text-decoration: none;
   margin: 0;
   color: mediumpurple;
+  padding: 16px;
 }
 
 h2 {
@@ -76,4 +77,12 @@ form {
 .createstorybody {
   background-color: lightsteelblue;
   padding: 20px;
+}
+
+#header-text {
+  display: flex;
+}
+
+#logo {
+  width: 70px;
 }
