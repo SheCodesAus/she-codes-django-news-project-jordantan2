@@ -4,5 +4,9 @@ Starter code for the Plus Django project.
 
 https://secret-oasis-27419.herokuapp.com/
 
-username:
-password:
+username: user
+password: userpassword
+
+- Editing and deleting stories!
+- If you click on a username shown under the story they have written it will show you their profile info!
+- Categories: Clicking on the category next to the username will show you all story titles under that category!

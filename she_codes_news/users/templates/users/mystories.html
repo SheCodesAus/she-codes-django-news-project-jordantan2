@@ -14,13 +14,13 @@
     {% for story in user.newsstory_set.all %}
     <p></p>
     {{ story.title }}
+    <a style="color: grey" href="{% url 'news:editStory' story.id %}">Edit</a>
     <a
       style="color: red"
       id="deletestory"
       href="{% url 'news:deleteStory' story.id %}"
       >Delete</a
     >
-    <a style="color: grey" href="{% url 'news:editStory' story.id %}">Edit</a>
     {% endfor %}
   </div>
 </div>
