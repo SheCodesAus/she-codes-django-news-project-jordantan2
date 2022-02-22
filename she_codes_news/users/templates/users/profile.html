@@ -15,13 +15,5 @@
         <img scr="{% static 'users/default.jpg' %}">
     {% endif %}
 </div>
-{% comment %} <div>
-    <h4>Strories written by {{ customuser.username }}:</h4>
-    {% for story in customuser.newsstory_set.all %}
-        <p> </p>
-        {{ story.title }}
-        <a style="color: red;"id="deletestory" href="{% url 'news:deleteStory' story.id %}">Delete Story</a>
-    {% endfor %}  
-</div> {% endcomment %}
 
 {% endblock %}

@@ -1,24 +1,28 @@
-{% extends "base.html" %}
-{% load static %}
-
-{% block stylesheets %}
+{% extends "base.html" %} {% load static %} {% block stylesheets %}
 <link rel="stylesheet" type="text/css" href="{% static 'users/styles.css' %}" />
-{% endblock %} 
-
-{% block content %}
+{% endblock %} {% block content %}
 <div>
-<a style="width: 125px; display: flex ;" id="newstory" href="{% url 'news:newStory' %}">Write New Story</a>
+  <a
+    style="width: 125px; display: flex"
+    id="newstory"
+    href="{% url 'news:newStory' %}"
+    >Write New Story</a
+  >
 
-<div>
-<h4>Strories written by you:</h4>
-{% for story in user.newsstory_set.all %}
-    <p> </p>
+  <div>
+    <h4>Strories written by you:</h4>
+    {% for story in user.newsstory_set.all %}
+    <p></p>
     {{ story.title }}
-    <a style="color: red;"id="deletestory" href="{% url 'news:deleteStory' story.id %}">Delete Story</a>
-{% endfor %}  
+    <a
+      style="color: red"
+      id="deletestory"
+      href="{% url 'news:deleteStory' story.id %}"
+      >Delete</a
+    >
+    <a style="color: grey" href="{% url 'news:editStory' story.id %}">Edit</a>
+    {% endfor %}
+  </div>
 </div>
-  
-</div>
-
 
 {% endblock %}

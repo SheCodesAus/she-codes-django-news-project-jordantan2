@@ -1,12 +1,13 @@
 {% extends "base.html" %} {% load static %} {% block stylesheets %}
 <link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}" />
 {% endblock %} {% block content %}
+
 <div class="createstorybody">
-  <h1 id="newstorytxt">Delete Story</h1>
-  {{ newsstory.title }} {{ newsstory.pub_date}}
+  <h1 id="newstorytxt">Edit!</h1>
+
   <form action="" method="post">
     {% csrf_token %} {{ form.as_p }}
-    <input type="submit" value="delete" />
+    <input type="submit" value="save" />
   </form>
 </div>
 

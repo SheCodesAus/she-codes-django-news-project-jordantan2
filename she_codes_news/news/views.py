@@ -4,6 +4,7 @@ from .models import NewsStory, Category
 from django.urls import reverse_lazy
 from .forms import StoryForm
 from django.core.exceptions import PermissionDenied
+from django.views.generic import UpdateView
 
 
 class IndexView(generic.ListView):
@@ -47,6 +48,13 @@ class DeleteStoryView(generic.DeleteView):
         if story.author != self.request.user:
             raise PermissionDenied()
         return story
+
+
+class EditStoryView(generic.UpdateView):
+    model = NewsStory
+    fields = "__all__"
+    template_name = "news/editStory.html"
+    success_url = reverse_lazy("news:index")
 
 
 class CategoryView(generic.DetailView):

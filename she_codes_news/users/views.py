@@ -6,6 +6,7 @@ from .models import CustomUser
 from .forms import CustomUserCreationForm
 from django.views import generic
 from django.contrib.auth import get_user_model
+from django.views.generic import UpdateView
 
 USER_MODEL = get_user_model()
 
@@ -24,3 +25,8 @@ class CreateAccountView(CreateView):
 
 class MyStoriesView(generic.TemplateView):
     template_name = "users/mystories.html"
+
+
+class EditAccountInfo(generic.UpdateView):
+    fields = "__all__"
+    template_name = "users/editAccount.html"
