@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div id="user-profile">
+    <h2>{{ customuser.get_full_name }}</h2>
+    <div style="background-color:lightgrey; width: 50%;">
+    <h1 style="color: black; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">{{ customuser.username }}</user></h1>
+    <h3>&lt;{{ customuser.email }}&gt;</h3>    
+    </div>
+    
+    {% if customuser.image %}
+    {% else %}
+        <img scr="{% static 'users/default.jpg' %}">
+    {% endif %}
+</div>
+
+{% endblock %}
